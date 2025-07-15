@@ -81,14 +81,13 @@ def main():
 
     all_articles = []
     seen_urls = set()
-    max_pages = 3
 
     for category_url in base_urls:
         print(f"\n[INFO] Scraping category: {category_url}")
         next_page = category_url
         pages_scraped = 0
 
-        while next_page and pages_scraped < max_pages:
+        while next_page:
             article_urls, next_page = collect_article_links(next_page)
             new_urls = [url for url in article_urls if url not in seen_urls]
             seen_urls.update(new_urls)
