@@ -37,7 +37,7 @@ def scrape_article(url: str) -> Optional[dict]:
 
     return {
         'title': title,
-        'content': content,
+        'text': content,
         'date': date.today().isoformat(),
         'url': url
     }
